@@ -75,7 +75,7 @@ If you run the script without any arguments, you'll see the following help menu:
 
 ## Additional References
 
-Blog post: 
+Blog post: https://blog.vonahi.io/post-exploitation-with-leprechaun/
 
 ## Authors
 
