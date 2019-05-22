@@ -40,7 +40,7 @@ gem install 'getopt'
 
 ### Tool help menu
 
-If you run the script without any arguments, you'll be provided with the following help menu:
+If you run the script without any arguments, you'll see the following help menu:
 
 ```
 [root:vonahisec-kali:~/scripts/leprechaun]# ./leprechaun.rb
