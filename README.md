@@ -43,7 +43,7 @@ Blog post:
 
 ## Authors
 
-* **Alton Johnson** - *Initial work* - [Twitter](https://www.twitter.com/altonjx)
+* **Alton Johnson** - *Creator* - [Twitter](https://www.twitter.com/altonjx) - [LinkedIn](https://www.linkedin.com/in/altonjx) - [GitHub](https://www.github.com/altjx)
 
 ## License
 
