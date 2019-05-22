@@ -80,7 +80,7 @@ class Leprechaun
 				server_hex = SecureRandom.hex(2) # reference this in the dot digraph
 				@servers[dip] = {:hex => "", :ports => {}, :client_count => 0}
 				@servers[dip][:hex] = "s#{server_hex}"
-				@digraph_headers += "\t#{@servers[dip][:hex]} [label = < <b>#{dip}</b> >, fillcolor=firebrick3, fontcolor=white, style=filled, shape=egg];\n"
+				@digraph_headers += "\t#{@servers[dip][:hex]} [label = < <b>#{dip}</b> >, fillcolor=darkgoldenrod, fontcolor=white, style=filled, shape=egg];\n"
 			end
 			if @servers[dip][:ports]["#{dport}/#{protocol}"].nil?
 				@servers[dip][:ports]["#{dport}/#{protocol}"] = {:clients => [], :client_count => 0}
@@ -95,7 +95,7 @@ class Leprechaun
 			if @clients[sip].nil? # avoid adding duplicates
 				client_hex = SecureRandom.hex(2)
 				@clients[sip] = "c#{client_hex}"
-				@digraph_headers += "\t#{@clients[sip]} [label = \"#{sip}\", fillcolor=chartreuse, style=filled];\n"
+				@digraph_headers += "\t#{@clients[sip]} [label = \"#{sip}\", fillcolor=green3, style=filled];\n"
 			end
 
 			if @dport_mappings.include? [dip, "#{dport}/#{protocol}"]
