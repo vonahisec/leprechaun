@@ -43,9 +43,9 @@ If you run the script without any arguments, you'll be provided with the followi
 +--------------+-----------------------------+----------------------------------+
 | Server       | Number of connected clients | Highest traffic destination port |
 +--------------+-----------------------------+----------------------------------+
-| 192.12.70.71 | 4                           | 80/tcp (4 connections)           |
-| 192.12.70.18 | 2                           | 443/tcp (2 connections)          |
-| 192.12.70.45 | 1                           | 445/tcp (1 connections)          |
+| 192.12.70.71 | 4                           | 80/tcp (4 clients)               |
+| 192.12.70.18 | 2                           | 443/tcp (2 clients)              |
+| 192.12.70.45 | 1                           | 445/tcp (1 clients)              |
 +--------------+-----------------------------+----------------------------------+
 ```
 ![Leprechaun](https://blog.vonahi.io/content/images/2019/05/data_well_known-1.png)
