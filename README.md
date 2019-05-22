@@ -1,5 +1,27 @@
 # Leprechaun
 
+```
+                                       .-----.  
+                                      /   V   \ 
+                                      |__...__|
+                                      |_....._|
+                                    .-'  ___  '-.
+                                    \_.-`. .`-._/
+              __ .--. _              (|\ (_) /|)
+           .-;.-"-.-;`_;-,            ( \_=_/ )
+         .(_( `)-;___),-;_),          _(_   _)_
+        (.( `\.-._)-.(   ). )       /` ||'-'|| `\
+      ,(_`'--;.__\  _).;--'`_)  _  /_/ (_>o<_) \_\
+     // )`--..__ ``` _( o )'(';,)\_//| || : || |\\
+     \;'        `````  `\\   '.\\--' |`"""""""`|//
+     /                   ':.___//     \___,___/\_(
+    |                      '---'|      |__|__|
+    ;        Leprechaun         ;      ;""|"";
+     \                         /       [] | []
+      '.     #vonahisec      .'      .'  / \  '.
+        '-,.__         __.,-'        `--'   `--'
+         (___/`````````\___) 
+```
 The purpose of this tool is to help penetration testers identify potentially valuable targets on the internal network environment. By aggregating netstat routes from multiple hosts, you can easily figure out what services and servers they're connected to.
 
 ## Getting Started
