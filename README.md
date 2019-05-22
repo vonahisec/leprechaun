@@ -48,7 +48,7 @@ If you run the script without any arguments, you'll be provided with the followi
 | 192.12.70.45 | 1                           | 445/tcp (1 connections)          |
 +--------------+-----------------------------+----------------------------------+
 ```
-![Leprechaun][https://blog.vonahi.io/content/images/2019/05/data_well_known-1.png]
+![Leprechaun](https://blog.vonahi.io/content/images/2019/05/data_well_known-1.png)
 
 
 ## Additional References
