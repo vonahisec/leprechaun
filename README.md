@@ -22,7 +22,7 @@
         '-,.__         __.,-'        `--'   `--'
          (___/`````````\___) 
 ```
-The purpose of this tool is to help penetration testers identify potentially valuable targets on the internal network environment. By aggregating netstat routes from multiple hosts, you can easily figure out what services and servers they're connected to.
+The purpose of this tool is to help penetration testers identify potentially valuable targets on the internal network environment. By aggregating netstat routes from multiple hosts, you can easily figure out what's going on within.
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You'll need a few Ruby gems to get started -- if you don't have them already, that is.
+You'll need a few Ruby gems to get started - if you don't have them already, that is.
 
 ```
 gem install 'securerandom'
