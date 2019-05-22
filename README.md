@@ -51,12 +51,13 @@ If you run the script without any arguments, you'll see the following help menu:
 
   Usage: ./leprechaun.rb -f /path/to/netstat_results.txt -p <port>
 
-  -f	File containing the output of netstat results.
-  -p	Port you're interested in. E.g., 80. Specify "all" to see all traffic or "common" for common ports.
+  -f  File containing the output of netstat results.
+  -p  Port you're interested in. E.g., 80. Specify "all", "common", or separate ports with commas
 
   Example: ./leprechaun.rb -f netstat_output.txt -p 80
   Example: ./leprechaun.rb -f netstat_output.txt -p all
   Example: ./leprechaun.rb -f netstat_output.txt -p common
+  Example: ./leprechaun.rb -f netstat_output.txt -p 80,443
 ```
 
 ### Example outputs
