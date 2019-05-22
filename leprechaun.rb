@@ -80,7 +80,7 @@ class Leprechaun
 				server_hex = SecureRandom.hex(2) # reference this in the dot digraph
 				@servers[dip] = {:hex => "", :ports => {}, :client_count => 0}
 				@servers[dip][:hex] = "s#{server_hex}"
-				@digraph_headers += "\t#{@servers[dip][:hex]} [label = < <b>#{dip}</b> >, fillcolor=darkgoldenrod, fontcolor=white, style=filled, shape=egg];\n"
+				@digraph_headers += "\t#{@servers[dip][:hex]} [label = < <b>#{dip}</b> >, fillcolor=gold3, fontcolor=white, style=filled, shape=egg];\n"
 			end
 			if @servers[dip][:ports]["#{dport}/#{protocol}"].nil?
 				@servers[dip][:ports]["#{dport}/#{protocol}"] = {:clients => [], :client_count => 0}
