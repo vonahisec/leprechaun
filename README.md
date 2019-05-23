@@ -55,10 +55,10 @@ If you run the script without any arguments, you'll see the following help menu:
   -p  Port you're interested in. E.g., 80. Specify "all", "common", or separate ports with commas
   -e  The type of destination IP addresses you want to see connections to (e.g. external/internal/all).
 
-  Example: /root/scripts/leprechaun/leprechaun.rb -f netstat_output.txt -p 80
-  Example: /root/scripts/leprechaun/leprechaun.rb -f netstat_output.txt -p all
-  Example: /root/scripts/leprechaun/leprechaun.rb -f netstat_output.txt -p common
-  Example: /root/scripts/leprechaun/leprechaun.rb -f netstat_output.txt -p 80,443 -t external
+  Example: ./leprechaun.rb -f netstat_output.txt -p 80
+  Example: ./leprechaun.rb -f netstat_output.txt -p all
+  Example: ./leprechaun.rb -f netstat_output.txt -p common
+  Example: ./leprechaun.rb -f netstat_output.txt -p 80,443 -t external
 ```
 
 ### Example outputs
