@@ -51,9 +51,9 @@ If you run the script without any arguments, you'll see the following help menu:
 
   Usage: ./leprechaun.rb -f /path/to/netstat_results.txt -p <port>
 
-  -f  File containing the output of netstat results.
-  -p  Port you're interested in. E.g., 80. Specify "all", "common", or separate ports with commas
-  -e  The type of destination IP addresses you want to see connections to (e.g. external/internal/all).
+  -f  File containing the output of netstat results
+  -p  Port you're interested in. g.g., 80. Specify "all", "common", or separate ports with commas
+  -e  The type of destination IP addresses you want to see connections to (e.g. external/internal/all)
 
   Example: ./leprechaun.rb -f netstat_output.txt -p 80
   Example: ./leprechaun.rb -f netstat_output.txt -p all
