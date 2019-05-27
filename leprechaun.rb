@@ -143,8 +143,9 @@ class Leprechaun
 		puts table
 	end
 	def write_to_file
+		pts " [*] Completed! Graph output: network_diagram.png"
 		File.open("data.dot", "w") {|f| f.write(@digraph)}
-		`sfdp -Tpng data.dot -o data.png -Grankdir=LR`
+		`sfdp -Tpng data.dot -o network_diagram.png -Grankdir=LR`
 	end
 end
 if $0 == __FILE__
