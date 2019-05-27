@@ -60,11 +60,15 @@ class Leprechaun
 	def parse_data
 		@data.each do |line|
 			routes = line.scan(/\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}:\d+\b/)
-			next unless !routes.empty?
-			source_ip = routes[0].split(":")[0] # source IP address
-			source_port = routes[0].split(":")[1] # source port
-			dest_ip = routes[1].split(":")[0] # destination IP address
-			dest_port = routes[1].split(":")[1] # destination port
+			next if routes.empty? or routes.nil?
+			begin
+				source_ip = routes[0].split(":")[0] # source IP address
+				source_port = routes[0].split(":")[1] # source port
+				dest_ip = routes[1].split(":")[0] # destination IP address
+				dest_port = routes[1].split(":")[1] # destination port
+			rescue
+				next
+			end
 			next if dest_ip == "0.0.0.0"
 			# Skip depending on type of traffic the user wants.
 			if @ip_type == "internal"
