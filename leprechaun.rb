@@ -76,7 +76,7 @@ class Leprechaun
 			elsif @ip_type == "external"
 				next if private_ip? dest_ip
 			end
-			protocol = (line.include?("TCP") ? "tcp" : "udp")
+			protocol = (line.downcase.include?("tcp") ? "tcp" : "udp")
 			well_known = [17,21,22,23,25,53,69,80,81,86,110,123,135,139,143,161,389,443,445,587,636,1311,1433,1434,1720,2301,2381,3306,3389,4443,47001,5060,5061,5432,5500,5900,5901,5985,5986,7080,8080,8081,8082,8089,8000,8180,8443]
 
 			if @ports.include? "common"
