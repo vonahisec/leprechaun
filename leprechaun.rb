@@ -146,7 +146,7 @@ class Leprechaun
 	end
 	def write_to_file
 		File.open("data.dot", "w") {|f| f.write(@digraph)}
-		`sfdp -Tpng data.dot -o network_diagram.png -Grankdir=LR`
+		`sfdp -Tpng data.dot -o network_diagram.png -Grankdir=LR; rm data.dot`
 		puts "\n [*] Completed! Graph output file located at: ./network_diagram.png\n\n"
 	end
 end
