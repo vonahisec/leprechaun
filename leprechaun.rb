@@ -12,7 +12,7 @@
 # Version: 1.0
 #
 
-['securerandom','terminal-table','getopt/std'].each(&method(:require))
+['securerandom','terminal-table','getopt/std', 'pry'].each(&method(:require))
 def help
 	puts "\n " + "-" * 61
 	puts " \e[1;34mLeprechaun v1.0 - Alton Johnson (@altonjx)\e[0;00m"
@@ -78,7 +78,6 @@ class Leprechaun
 			end
 			protocol = (line.downcase.include?("tcp") ? "tcp" : "udp")
 			well_known = [17,21,22,23,25,53,69,80,81,86,110,123,135,139,143,161,389,443,445,587,636,1311,1433,1434,1720,2301,2381,3306,3389,4443,47001,5060,5061,5432,5500,5900,5901,5985,5986,7080,8080,8081,8082,8089,8000,8180,8443]
-
 			if @ports.include? "common"
 				next unless well_known.include? dest_port.to_i
 			end
@@ -94,30 +93,29 @@ class Leprechaun
 				@digraph_headers += "\t#{@servers[dest_ip][:hex]} [label = < <b>#{dest_ip}</b> >, fillcolor=gold3, fontcolor=white, style=filled, shape=egg];\n"
 			end
 			if @servers[dest_ip][:ports]["#{dest_port}/#{protocol}"].nil?
-				@servers[dest_ip][:ports]["#{dest_port}/#{protocol}"] = {:clients => [], :client_count => 0}
+				port_hex = SecureRandom.hex(2)
+				@servers[dest_ip][:ports]["#{dest_port}/#{protocol}"] = {:clients => [], :client_count => 0, :hex => "p#{port_hex}"}
+				@digraph_headers += "\tp#{port_hex} [label = \"#{dest_port}/#{protocol}\"];\n"
 			end
-
 			unless @servers[dest_ip][:ports]["#{dest_port}/#{protocol}"][:clients].include? source_ip
 				@servers[dest_ip][:ports]["#{dest_port}/#{protocol}"][:clients] << source_ip # add source IP
 				@servers[dest_ip][:ports]["#{dest_port}/#{protocol}"][:client_count] += 1
 				@servers[dest_ip][:client_count] += 1
 			end
-
 			if @clients[source_ip].nil? # avoid adding duplicate connections
 				client_hex = SecureRandom.hex(2)
 				@clients[source_ip] = "c#{client_hex}"
 				@digraph_headers += "\t#{@clients[source_ip]} [label = \"#{source_ip}\", fillcolor=green3, style=filled];\n"
 			end
-
 			if @dest_port_mappings.include? [dest_ip, "#{dest_port}/#{protocol}"]
 				unless @source_port_mappings.include? [source_ip, "#{dest_port}/#{protocol}"]
-					@digraph_data += "\t\"#{@clients[source_ip]}\" -> \"#{dest_port}/#{protocol}\";\n"
+					@digraph_data += "\t#{@clients[source_ip]} -> \"#{@servers[dest_ip][:ports]["#{dest_port}/#{protocol}"][:hex]}\";\n"
 					@source_port_mappings << [source_ip, "#{dest_port}/#{protocol}"]
 				end
 			else
 				@dest_port_mappings << [dest_ip, "#{dest_port}/#{protocol}"]
 				@source_port_mappings << [source_ip, "#{dest_port}/#{protocol}"]
-				@digraph_data += "\t\"#{@clients[source_ip]}\" -> \"#{dest_port}/#{protocol}\" -> #{@servers[dest_ip][:hex]};\n"
+				@digraph_data += "\t#{@clients[source_ip]} -> \"#{@servers[dest_ip][:ports]["#{dest_port}/#{protocol}"][:hex]}\" -> #{@servers[dest_ip][:hex]};\n"
 			end
 		end
 		@digraph += "#{@digraph_headers}\n #{@digraph_data}"
