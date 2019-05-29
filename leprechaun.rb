@@ -12,7 +12,7 @@
 # Version: 1.0
 #
 
-['securerandom','terminal-table','getopt/std', 'pry'].each(&method(:require))
+['securerandom','terminal-table','getopt/std'].each(&method(:require))
 def help
 	puts "\n " + "-" * 61
 	puts " \e[1;34mLeprechaun v1.0 - Alton Johnson (@altonjx)\e[0;00m"
