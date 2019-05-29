@@ -145,9 +145,9 @@ class Leprechaun
 		puts table
 	end
 	def write_to_file
-		puts "\n [*] Completed! Graph output file located at: ./network_diagram.png\n\n"
 		File.open("data.dot", "w") {|f| f.write(@digraph)}
 		`sfdp -Tpng data.dot -o network_diagram.png -Grankdir=LR`
+		puts "\n [*] Completed! Graph output file located at: ./network_diagram.png\n\n"
 	end
 end
 if $0 == __FILE__
