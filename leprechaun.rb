@@ -146,9 +146,9 @@ class Leprechaun
 	end
 	def write_to_file
 		File.open("data.dot", "w") {|f| f.write(@digraph)}
-		tmp_file = SecureRandom.hex(8)
-		`sfdp -Tpng data.dot -o #{tmp_file}.png -Grankdir=LR; rm data.dot`
-		puts "\n [*] Completed! Graph output file located at: ./#{tmp_file}.png\n\n"
+		tmp_file = SecureRandom.hex(6)
+		`sfdp -Tpng data.dot -o leprechaun_#{tmp_file}.png -Grankdir=LR; rm data.dot`
+		puts "\n [*] Completed! Graph output file located at: ./leprechaun_#{tmp_file}.png\n\n"
 	end
 end
 if $0 == __FILE__
