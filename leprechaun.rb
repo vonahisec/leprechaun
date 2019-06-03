@@ -157,6 +157,12 @@ if $0 == __FILE__
 	opt = Getopt::Std.getopts("f:p:t:")
 	fail "Please specify a netstat output file (-f) as well as a port (-p)." unless opt['f'] and opt['p']
 	opt['t'] = "all" if opt['t'].nil?
+
+	# Check if file exists first.
+	if !File.exists? opt['f']
+		fail "The file provided with -f does not exist. Please select a valid file."
+	end
+
 	lep = Leprechaun.new(opt['f'], opt['p'], opt['t'])
 	lep.parse_data
 	lep.write_to_file
