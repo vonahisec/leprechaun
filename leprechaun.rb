@@ -70,6 +70,7 @@ class Leprechaun
 				next
 			end
 			next if dest_ip == "0.0.0.0"
+			next if !line.include? "ESTABLISHED"
 			# Skip depending on type of traffic the user wants.
 			if @ip_type == "internal"
 				next unless private_ip? dest_ip
