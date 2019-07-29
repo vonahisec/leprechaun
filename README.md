@@ -38,6 +38,10 @@ gem install 'terminal-table'
 gem install 'getopt'
 ```
 
+Lastly, make sure you have Graphviz installed. You can install that with the following command:
+
+`apt install graphviz -y`
+
 ### Tool help menu
 
 If you run the script without any arguments, you'll see the following help menu:
