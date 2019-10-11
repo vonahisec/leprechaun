@@ -82,6 +82,7 @@ If you run the script without any arguments, you'll see the following help menu:
 ## Additional References
 
 Blog post: https://blog.vonahi.io/post-exploitation-with-leprechaun/
+LinkedIn Article: https://www.linkedin.com/pulse/finding-gaps-your-network-segmentation-using-johnson-oscp-osce/
 
 ## Authors
 
